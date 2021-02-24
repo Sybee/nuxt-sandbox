@@ -1,0 +1,64 @@
+<template>
+  <div>
+    <v-fade-transition mode="out-in">
+      <v-skeleton-loader v-if="loading" class="elevation-2 mb-6" boilerplate type="article, actions"></v-skeleton-loader>
+      <v-card v-else>
+        <v-card-title>Users Widget</v-card-title>
+        <v-card-text>
+          <v-simple-table>
+            <thead>
+              <tr>
+                <th class="text-left">ID</th>
+                <th class="text-left">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in users" :key="user.id">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+              </tr>
+            </tbody>
+          </v-simple-table>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn color="primary">Button</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-fade-transition>
+  </div>
+</template>
+
+<script>
+import userService from '@/services/api/userService'
+
+export default {
+  data: () => ({
+    loading: false,
+    users: [],
+  }),
+  async created() {
+    try {
+      this.loading = true
+
+      setTimeout(async () => {
+        const { data } = await userService.getUsers()
+        this.users = data.splice(0, 10) // Первые 10
+      }, 2000);
+    } catch (error) {
+
+      setTimeout(() => {
+        console.log(error)
+      }, 2000);
+    } finally {
+
+      setTimeout(() => {
+        this.loading = false
+      }, 2000);
+    }
+  },
+}
+</script>
+
+<style>
+
+</style>
