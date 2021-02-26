@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3001',
-  timeout: 3000,
+  baseURL: 'https://jsonplaceholder.typicode.com',
+  timeout: 2000,
   // headers: [],
 })
 
