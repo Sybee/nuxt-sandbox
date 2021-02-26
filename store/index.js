@@ -14,3 +14,7 @@ export const mutations = {
     state.counter = state.counter > 0 ? state.counter-1 : 0
   },
 }
+
+export const actions = {
+
+}
