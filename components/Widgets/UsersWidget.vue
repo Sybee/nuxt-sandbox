@@ -20,9 +20,6 @@
             </tbody>
           </v-simple-table>
         </v-card-text>
-        <v-card-actions>
-          <v-btn color="primary">Button</v-btn>
-        </v-card-actions>
       </v-card>
     </v-fade-transition>
   </div>

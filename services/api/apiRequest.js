@@ -6,10 +6,6 @@ const instance = axios.create({
   // headers: [],
 })
 
-// instance.interceptors.request.use(function (config) {
-//   console.log(config)
-// })
-
 // instance.interceptors.response.use(function (response) {
 //   console.log(response)
 //   return response;

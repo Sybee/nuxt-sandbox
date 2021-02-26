@@ -1,12 +1,15 @@
 <template>
   <v-container>
-    <h1 class="mb-10">Index page</h1>
+    <h1 class="mb-10">
+      <span>Index page</span>
+      <v-btn color="primary" type="button" :disabled="true" @click.prevent="update">Update</v-btn>
+    </h1>
 
     <v-row>
-      <v-col sm=3>
+      <v-col>
         <UsersWidget />
       </v-col>
-      <v-col sm=3>
+      <v-col>
         <PostsWidget />
       </v-col>
     </v-row>
@@ -15,10 +18,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import UsersWidget from '@/components/Widgets/UsersWidget'
 import PostsWidget from '@/components/Widgets/PostsWidget'
 
 export default {
   components: { UsersWidget, PostsWidget },
+  data: () => ({}),
+  computed: {
+    // ...mapGetters({
+    //   isButtonDisabled: 'executing',
+    // }),
+  },
+  methods: {
+    update() {
+      console.log('update')
+    },
+  },
 }
 </script>
