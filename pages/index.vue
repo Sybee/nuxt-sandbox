@@ -1,9 +1,6 @@
 <template>
   <v-container>
-    <h1 class="mb-10">
-      <span>Index page</span>
-      <v-btn color="primary" type="button" :disabled="$store.state.counter > 0">Update</v-btn>
-    </h1>
+    <v-btn color="primary" type="button" :disabled="$store.state.counter > 0">REQUEST PROCESSING INDICATION</v-btn>
 
     <v-row>
       <v-col>

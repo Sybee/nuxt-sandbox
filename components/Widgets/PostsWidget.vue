@@ -39,7 +39,7 @@ export default {
 
       const { data } = await postService.getPosts()
 
-      this.posts = data.splice(0, 10) // Первые 10
+      this.posts = data
     } catch (error) {
       console.log(error)
     } finally {

@@ -39,7 +39,7 @@ export default {
 
       const { data } = await userService.getUsers()
 
-      this.users = data.splice(0, 10) // Первые 10
+      this.users = data
     } catch (error) {
       console.log(error)
     } finally {
