@@ -11,7 +11,6 @@ export default ({ store }) => {
     return response
   }, function (error) {
     alert(error)
-
     return Promise.reject(error)
   })
 }
