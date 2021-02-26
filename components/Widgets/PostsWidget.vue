@@ -37,20 +37,13 @@ export default {
     try {
       this.loading = true
 
-      setTimeout(async () => {
-        const { data } = await postService.getPosts()
-        this.posts = data.splice(0, 10) // Первые 10
-      }, 3000);
+      const { data } = await postService.getPosts()
+
+      this.posts = data.splice(0, 10) // Первые 10
     } catch (error) {
-
-      setTimeout(() => {
-        console.log(error)
-      }, 3000);
+      console.log(error)
     } finally {
-
-      setTimeout(() => {
-        this.loading = false
-      }, 3000);
+      this.loading = false
     }
   },
 }

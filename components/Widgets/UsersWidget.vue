@@ -37,20 +37,13 @@ export default {
     try {
       this.loading = true
 
-      setTimeout(async () => {
-        const { data } = await userService.getUsers()
-        this.users = data.splice(0, 10) // Первые 10
-      }, 2000);
+      const { data } = await userService.getUsers()
+
+      this.users = data.splice(0, 10) // Первые 10
     } catch (error) {
-
-      setTimeout(() => {
-        console.log(error)
-      }, 2000);
+      console.log(error)
     } finally {
-
-      setTimeout(() => {
-        this.loading = false
-      }, 2000);
+      this.loading = false
     }
   },
 }
