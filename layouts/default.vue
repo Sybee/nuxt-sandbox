@@ -1,8 +1,31 @@
 <template>
   <v-app>
+    <v-app-bar app color="dark" dark clipped-left>
+      <v-app-bar-title>PAGE TITLE</v-app-bar-title>
+    </v-app-bar>
+
+    <v-navigation-drawer app color="primary" dark clipped>
+      <v-list>
+        <v-list-item nuxt to="/">
+          <v-list-item-title>Index</v-list-item-title>
+        </v-list-item>
+        <v-list-item nuxt to="/edit">
+          <v-list-item-title>Edit</v-list-item-title>
+        </v-list-item>
+        <v-list-item nuxt to="/add">
+          <v-list-item-title>Add</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-main>
       <Nuxt />
     </v-main>
+
+    <v-footer app inset color="purple" dark>
+      FOOTER
+    </v-footer>
+
   </v-app>
 </template>
 

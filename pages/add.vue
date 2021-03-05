@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <PageToolbar info edit />
+    <PageToolbar add />
     <v-container>
       <h1>asdasd</h1>
     </v-container>
